@@ -1,6 +1,13 @@
-<button (click)="listenToEvents()">Listen to events</button>
-<button (click)="operation1()">Operation 1</button>
-<button (click)="routeMe()">Route Me</button>
+<p>
+  <button (click)="listenToEvents()">Start listening to events</button>
+</p>
+<p>
+  <button (click)="operation1()">Simulate a prolonged operation</button>
+</p>
+<p>
+  <button (click)="routeMe()">Route to another component</button>
+</p>
+
 <router-outlet></router-outlet>
 <div class="task_progress">
   <p>{{ progressbar }}</p>

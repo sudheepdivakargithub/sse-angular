@@ -22,10 +22,10 @@ export class AppComponent implements OnInit {
   listenToEvents() {
     this.sseService.listenToEvent().subscribe(
       (data: any) => {
-        if (data.finished) {
+        if (data.type === 'TERMINATED') {
           this.progressbar = 'Update over!';
         } else {
-          this.progressbar = 'Updated user : ' + data.usersProcessed + '/10';
+          this.progressbar = 'Updated user : ' + data.userId + '/10';
         }
       },
       (error) => console.log(error)

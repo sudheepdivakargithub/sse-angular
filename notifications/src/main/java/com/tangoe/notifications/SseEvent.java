@@ -1,20 +1,36 @@
 package com.tangoe.notifications;
 
+
+
 public class SseEvent {
-	private final int usersProcessed;
+	private final int userId;
 
-	private final boolean finished;
+	private final boolean isUpdated;
 
-	public SseEvent(int usersProcessed, boolean finished) {
-		this.usersProcessed = usersProcessed;
-		this.finished = finished;
+	private final String message;
+
+	private final EventType type;
+
+	public SseEvent(int userId, boolean isUpdated, String message, EventType type) {
+		this.userId = userId;
+		this.isUpdated = isUpdated;
+		this.message = message;
+		this.type = type;
+
 	}
 
-	public int getUsersProcessed() {
-		return usersProcessed;
+	public int getUserId() {
+		return userId;
+	}
+	public boolean isUpdated() {
+		return isUpdated;
 	}
 
-	public boolean isFinished() {
-		return finished;
+	public String getMessage() {
+		return message;
+	}
+
+	public EventType getType() {
+		return type;
 	}
 }
